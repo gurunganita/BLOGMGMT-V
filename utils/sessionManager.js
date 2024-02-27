@@ -12,7 +12,7 @@ const checkRole = (sysRole) => {
       const userData = await userModel.findOne({ email, isActive: true });
       if (!user) throw new Error("User not found");
       console.log(userData, sysRole);
-      const isValidRole = sysRole.some((role) => user.roles.includes(role));
+      const isValidRole = sysRole.some((role) => userData.roles.includes(role));
       // console.log({ isValidRole });
       if (!isValidRole) throw new Error("Permission Denied");
       next();

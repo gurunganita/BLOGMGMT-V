@@ -1,6 +1,8 @@
 const Model = require("./blog.model");
 const bookmarkModel = require("../bookmarks/bookmark.model");
-const create = (payload) => {};
+const create = (payload) => {
+  return userModel.findOne(payload);
+};
 const getAll = () => {};
 // const get = () => {};
 const getById = (_id) => {};
